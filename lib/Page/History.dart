@@ -64,13 +64,18 @@ class _HistoryState extends State<History> {
           height: 50,
           child: ElevatedButton(
             onPressed: () {
-              setState(() {
-                localCart.clear();
-              });
-              // Aksi ketika tombol Order Now ditekan
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Order berhasil dikirim!')),
-              );
+              if (localCart.isEmpty) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('Pilih Pesanan Dulu')),
+                );
+              } else {
+                setState(() {
+                  localCart.clear();
+                });
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('Order Berhasil Dikirim')),
+                );
+              }
             },
             child: const Text('Order Now'),
           ),
