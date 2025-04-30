@@ -53,8 +53,8 @@ class _MainPage extends State<Page> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.history, color: Colors.white),
-            label: 'History',
+            icon: Icon(Icons.shop, color: Colors.white),
+            label: 'keranjang',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings, color: Colors.white),

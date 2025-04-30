@@ -57,6 +57,25 @@ class _HistoryState extends State<History> {
                 );
               },
             ),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: SizedBox(
+          width: double.infinity,
+          height: 50,
+          child: ElevatedButton(
+            onPressed: () {
+              setState(() {
+                localCart.clear();
+              });
+              // Aksi ketika tombol Order Now ditekan
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Order berhasil dikirim!')),
+              );
+            },
+            child: const Text('Order Now'),
+          ),
+        ),
+      ),
     );
   }
 }
