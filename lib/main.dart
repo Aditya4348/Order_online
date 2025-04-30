@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'Page/HomePage.dart';
 import 'Page/History.dart';
-import 'Page/Setting.dart';
 
 void main() {
   runApp(Myapps());
@@ -32,7 +31,6 @@ class _MainPage extends State<Page> {
   final List<Widget> HalamanPage = [
     MaterialApp(home: MyWidget(),debugShowCheckedModeBanner: false),
     MaterialApp(home: History(cart: []),debugShowCheckedModeBanner: false),
-    MaterialApp(home: Setting(),debugShowCheckedModeBanner: false),
   ];
 
   @override
@@ -55,10 +53,6 @@ class _MainPage extends State<Page> {
           BottomNavigationBarItem(
             icon: Icon(Icons.shop, color: Colors.white),
             label: 'keranjang',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings, color: Colors.white),
-            label: 'Settings',
           ),
         ],
         selectedItemColor: Colors.white,
