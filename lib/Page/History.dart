@@ -18,6 +18,10 @@ class _HistoryState extends State<History> {
     localCart = List.from(widget.cart); // Buat salinan agar bisa diubah
   }
 
+  double getTotalBelanja() {
+    return localCart.fold(0.0, (sum, item) => sum + (item['price'] as double));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +30,7 @@ class _HistoryState extends State<History> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text('Keranjang'),
-            Text("Total Belanja:200k"),
+            Text("Total Belanja: Rp.${getTotalBelanja().toStringAsFixed(2)}"),
           ],
         ),
       ),
